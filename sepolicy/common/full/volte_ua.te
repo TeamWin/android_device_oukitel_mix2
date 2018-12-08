@@ -37,6 +37,3 @@ allow volte_ua volte_ua_socket:sock_file write;
 # Operation: Permission to use unix domain soccket 
 # Purpose: change socket between vtservice and volte_ua
 allow volte_ua vtservice:unix_stream_socket connectto;
-
-#for timer
-allow volte_ua self:capability2 wake_alarm;

@@ -58,11 +58,4 @@ allow mediaserver media_wfd_prop:property_service set;
 # Date : WK16.34
 # Operation : Migration
 # Purpose : Play tone for alert
-allow mediaserver cmas_file:file {read getattr};
-
-# Date : WK16.34
-# Operation : Migration
-# Purpose : WFD need notify on/off event
-allow mediaserver sysfs:file { read write open };
-allow mediaserver debugfs_ged:dir search;
-allow mediaserver debugfs_ged:file {read write open getattr};
+allow mediaserver custom_file:file {read getattr};

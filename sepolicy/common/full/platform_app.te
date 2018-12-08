@@ -146,8 +146,6 @@ unix_socket_connect(platform_app, rild_embms, rilproxy)
 allow platform_app embms_library_file:file create_file_perms;
 allow platform_app embms_library_file:dir rw_dir_perms;
 
-# Date : WK16.34
-# Operation : Migration
-# Purpose : Play tone for alert
-allow platform_app cmas_file:dir { getattr read open search};
-allow platform_app cmas_file:file { getattr read open};
+#gouxinyue
+allow platform_app hotknot_file:file { write read open};
+

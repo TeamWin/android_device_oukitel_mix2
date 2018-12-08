@@ -19,3 +19,9 @@ allow init seccfg_block_device:blk_file relabelto;
 allow init secro_block_device:blk_file relabelto;
 allow init frp_block_device:blk_file relabelto;
 allow init userdata_block_device:blk_file relabelto;
+
+# Date : WK15.31
+# Operation : Migration
+# Purpose : create symbolic link from /mnt/sdcard to /sdcard
+allow init tmpfs:lnk_file create;
+

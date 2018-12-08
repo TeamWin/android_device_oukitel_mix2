@@ -172,14 +172,19 @@ allow radio usp_prop:property_service set;
 # Purpose: EM should set 3g vt property
 allow radio mtk_em_3gvt_prop:property_service set;
 
-# Date : W1634 2016/08/17
-# Operation: IT
-# Purpose: for InCall Log Setting in EM
-allow radio log_tag_prop:property_service set;
-
 # Date : W1634 2016/8/16
 # Operation : IT
 # Purpose: Support configure check tool
 allow radio atci_service_exec:file getattr;
 allow radio atcid_exec:file getattr;
 allow radio audiocmdservice_atci_exec:file getattr;
+
+# Date : W1634 2016/08/17
+# Operation: IT
+# Purpose: for InCall Log Setting in EM
+allow radio log_tag_prop:property_service set;
+
+# Date : W1650 2016/12/06
+# Operation : IT
+# Purpose: set epdg config
+allow radio epdg_wod:unix_stream_socket connectto;

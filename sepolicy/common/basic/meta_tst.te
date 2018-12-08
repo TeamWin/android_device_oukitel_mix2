@@ -228,7 +228,7 @@ allow meta_tst sysfs_ccci:file r_file_perms;
 
 #Date: W16.17
 # Purpose:  N Migration for meta_tst get com port type and uart port info
-# detail avc log: [   11.751803] <1>.(1)[227:logd.auditd]type=1400 audit(1262304016.560:10):
+# detail avc log: [   11.751803] <1>.(1)[227:logd.auditd]type=1400 audit(1262304016.560:10): 
 #avc: denied { read } for pid=203 comm="meta_tst" name="meta_com_type_info" dev=
 #"sysfs" ino=11073 scontext=u:r:meta_tst:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
 allow meta_tst sysfs:file rw_file_perms;
@@ -241,18 +241,9 @@ allow meta_tst sysfs:file rw_file_perms;
 #s0 tcontext=u:object_r:system_file:s0 tclass=dir permissive=0
 allow meta_tst system_file:dir r_file_perms;
 
-# Date: WK16.18
-# Purpose: for CCCI reboot modem
-allow meta_tst gsm0710muxd_device:chr_file rw_file_perms;
-
-# Date: WK16.20
-# Purpose: meta_tst set sys.usb.config
-set_prop(meta_tst, system_radio_prop);
-
-#Date: W16.33
-# Purpose:  N Migration For CCT
-allow meta_tst media_rw_data_file:dir search;
-allow meta_tst media_rw_data_file:file { write open read};
+# Date : WK16.35
+# Purpose : Update camera flashlight driver device file
+allow meta_tst flashlight_device:chr_file rw_file_perms;
 
 #Date: W16.36
 # Purpose:  meta_tst use libmeta_rat to write libsysenv
@@ -261,12 +252,25 @@ allow meta_tst media_rw_data_file:file { write open read};
 #ino=4561 scontext=u:r:meta_tst:s0 tcontext=u:object_r:para_block_device:s0 tclass=blk_file permissive=0
 allow meta_tst para_block_device:blk_file { read write open };
 
-#Date: W16.45
-# Purpose : Allow unmount sdcardfs mounted on /data/media
+#Date: W16.46
+# Purpose : Allow meta_tst stop service which occupy data partition.
+# Detail avc log: avc: denied { getattr } for path="/system/bin/toolbox" dev="mmcblk0p26" ino=348
+#scontext=u:r:meta_tst:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=0
 allow meta_tst sdcard_type:filesystem unmount;
 allow meta_tst toolbox_exec:file { getattr execute execute_no_trans read open };
+allow meta_tst media_rw_data_file:dir search;
 allow meta_tst storage_stub_file:dir search;
+
 #Date: W16.50
 # Purpose : Allow meta_tst stop service which occupy data partition.
+# Detail avc log: avc: denied { getattr } for path="/system/bin/toolbox" dev="mmcblk0p26" ino=348
+#scontext=u:r:meta_tst:s0 tcontext=u:object_r:toolbox_exec:s0 tclass=file permissive=0
 allow meta_tst ctl_default_prop:property_service set;
 
+# Date: WK16.55
+# Operation : Migration
+# Purpose : Camera
+allow meta_tst CAM_CAL_DRV_device:chr_file rw_file_perms;
+allow meta_tst media_rw_data_file:file w_file_perms;
+allow meta_tst nvcfg_file:file rw_file_perms;
+allow meta_tst proc_ged:file read;

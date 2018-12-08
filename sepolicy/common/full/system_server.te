@@ -84,6 +84,10 @@ allow system_server mtk_volte_prop:property_service set;
 allow system_server mtk_wfc_prop:property_service set;
 allow system_server mtk_vt_prop:property_service set;
 
+#Added by liuzhnehe for leds permission
+allow system_server sysfs_ledwhite:file rw_file_perms;
+allow system_server sysfs_ledwhite:file { write };
+
 # Date: W16.21
 # Operation : Migration
 # Purpose : Allow system server to read/write /sys/kernel/debug/binder/* for ANR mechanism
@@ -109,21 +113,7 @@ allow system_server debugfs_tracing:file rw_file_perms;
 # Operation : Migration
 # Purpose : Allow system server to read /sys/kernel/debug/shrinker for memory debugging information
 allow system_server debugfs_shrinker_debug:file r_file_perms;
-
-# Date : WK16.34
-# Operation : Migration
-# Purpose : Play tone for alert
-allow system_server cmas_file:dir { getattr read open search};
-allow system_server cmas_file:file { getattr read open};
-
-# Date: W16.35
-# Operation : Carrier Express Pack: bug fix - ALPS02862154
-# Purpose : Allow system server to open/read/write ioctl for sending ccci to enter/leave deep flight
-allow system_server ccci_device:chr_file rw_file_perms;
-
-# Date: W16.37
-# Operation : Carrier Express Pack: bug fix - ALPS02892994
-# Purpose : Allow system server to set property ril eboot, splitted usp prop to usp srv prop
-allow system_server usp_srv_prop:property_service set;
-allow system_server radio_prop:property_service set;
-allow system_server cdma_prop:property_service set;
+# Date : WK16.46
+# Operation : new function
+# Purpose : Allow mtk_permcontrol_service to be find from service manager
+allow system_server mtk_permcontrol_service:service_manager find;

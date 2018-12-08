@@ -57,7 +57,6 @@ type proc_mtkcooler, fs_type;
 type proc_mtktz, fs_type;
 type proc_slogger, fs_type;
 type proc_lk_env, fs_type;
-type proc_ged, fs_type;
 type sysfs_ccci, fs_type, sysfs_type;
 type sysfs_ssw, fs_type,sysfs_type;
 type sysfs_vcorefs_pwrctrl, fs_type, sysfs_type;

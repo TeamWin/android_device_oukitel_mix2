@@ -78,7 +78,6 @@ type persist_mtk_main_attach, property_type;
 
 #============= allow uniservice-pack ==============
 type usp_prop, property_type, mtk_core_property_type;
-type usp_srv_prop, property_type, mtk_core_property_type;
 
 #=============allow EM set ims test mode property=============
 type ims_mode_prop, property_type, mtk_core_property_type;

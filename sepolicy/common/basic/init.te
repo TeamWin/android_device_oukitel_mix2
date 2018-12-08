@@ -54,8 +54,3 @@ allow init debugfs_dynamic_debug:file write;
 # Purpose : enable modules capability
 allow init self:capability sys_module;
 allow init kernel:system module_request;
-
-# Date : WK16.35
-# Operation : Migration
-# Purpose : create symbolic link from /mnt/sdcard to /sdcard
-allow init tmpfs:lnk_file create;

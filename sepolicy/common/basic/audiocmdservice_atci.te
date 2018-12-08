@@ -46,7 +46,6 @@ allow audiocmdservice_atci block_device:dir { write search };
 allow audiocmdservice_atci mnt_user_file:dir rw_dir_perms;
 allow audiocmdservice_atci { mnt_user_file storage_file }:lnk_file rw_file_perms;
 allow audiocmdservice_atci mmcblk0_block_device:blk_file { read write };
-allow audiocmdservice_atci storage_file:dir w_dir_perms;
 
 userdebug_or_eng(`
   allow audiocmdservice_atci self:capability { dac_override sys_nice fowner chown fsetid setuid ipc_lock net_admin};

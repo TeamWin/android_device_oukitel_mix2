@@ -192,12 +192,3 @@ allow audioserver media_rw_data_file:file { create_file_perms };
 # Purpose: Write audio dump files to external SDCard.
 allow audioserver sdcard_type:file { create_file_perms };
 allow audioserver storage_file:dir { r_dir_perms };
-
-# Date : WK16.33
-# Purpose: Allow to access ged for gralloc_extra functions
-allow audioserver proc_ged:file {open read write ioctl getattr};
-
-# Date : WK17.09
-# Purpose: Fix bootup avc violation
-allow audioserver rootfs:lnk_file getattr;
-

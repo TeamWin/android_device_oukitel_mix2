@@ -99,7 +99,3 @@ allow ipod misc_device:chr_file { open read write };
 allow ipod self:capability { chown sys_admin };
 allow ipod mtd_device:blk_file { read write open };
 allow ipod ctl_ipo_swap_prop:property_service set;
-
-# Date : WK16.33
-# Purpose: Allow to access ged for gralloc_extra functions
-allow ipod proc_ged:file {open read write ioctl getattr};

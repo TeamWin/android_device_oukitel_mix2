@@ -58,3 +58,9 @@ allow pq pq_service:service_manager add;
 # Purpose : Allow permission check
 allow pq pq_service:service_manager { find };
 allow pq permission_service:service_manager { find };
+
+# Date : WK16.42
+# Operation : Migration
+# Purpose : Allow permission check
+allow pq sensorservice_service:service_manager find;
+allow pq system_server:unix_stream_socket { read write };

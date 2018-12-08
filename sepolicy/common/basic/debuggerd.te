@@ -78,11 +78,9 @@ allow debuggerd domain:lnk_file getattr;
 #core-pattern
 allow debuggerd usermodehelper:file r_file_perms;
 
-#Lenovo wuzb1 2017-04-14 Prevent debuggerd from reading security info on user build for CTS
+# Lenovo lubm1 20170426 IKANGEROW-4661 for CTS 7.1r4 since Google update neverallow rule.
 #suid_dumpable
-userdebug_or_eng(`
-allow debuggerd proc_security:file r_file_perms;
-')
+# allow debuggerd proc_security:file r_file_perms;
 
 #dmesg
 allow debuggerd kernel:system syslog_read;
@@ -247,18 +245,3 @@ allow debuggerd debugfs_ion_mm_heap:lnk_file read;
 allow debuggerd debugfs_ion_mm_heap:dir search;
 allow debuggerd debugfs_ion_mm_heap:file { read open };
 
-# Date : WK16.33
-# Purpose: Allow to access ged for gralloc_extra functions
-allow debuggerd proc_ged:file {open read write ioctl getattr};
-
-# Purpose: Allow deubggerd dump profile data
-allow debuggerd user_profile_data_file:dir r_dir_perms;
-allow debuggerd user_profile_data_file:file r_file_perms;
-
-# Purpose: Allow debuggerd to dumpsys bluetooth_manager
-allow debuggerd bluetooth_manager_service:service_manager find;
-
-# Date: 2016/11/02
-# Purpose: access for mdlog
-allow debuggerd mdlog_data_file:dir r_dir_perms;
-allow debuggerd mdlog_data_file:file r_file_perms;

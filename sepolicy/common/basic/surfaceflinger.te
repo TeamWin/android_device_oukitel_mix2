@@ -12,7 +12,3 @@ allow surfaceflinger debug_prop:property_service set;
 # Operation : N0 UT
 # Purpose : allow debuggerd dumpsys surfaceflinger
 allow surfaceflinger debuggerd:fifo_file write;
-
-# Date : WK16.33
-# Purpose: Allow to access ged for gralloc_extra functions
-allow surfaceflinger proc_ged:file {open read write ioctl getattr};

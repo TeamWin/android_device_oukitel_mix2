@@ -52,9 +52,11 @@ type camera_dpe_device, dev_type;
 type camera_tsf_device, dev_type;
 type camera_fdvt_device, dev_type;
 type camera_pipemgr_device, dev_type;
+type ccu_device, dev_type;
 type mtk_jpeg_device, dev_type;
 type kd_camera_hw_device, dev_type;
 type kd_camera_flashlight_device, dev_type;
+type flashlight_device, dev_type;
 type kd_camera_hw_bus2_device, dev_type;
 type MATV_device, dev_type;
 type mt_otg_test_device, dev_type;
@@ -188,6 +190,7 @@ type mbim_device, dev_type;
 type audio_ipi_device, dev_type;
 type kb_block_device,dev_type;
 type dkb_block_device,dev_type;
+type boot_para_block_device,dev_type;
 
 ##########################
 # Sensor common Devices Start
@@ -215,6 +218,8 @@ type m_mag_misc_device, dev_type;
 type m_gyro_misc_device, dev_type;
 type m_act_misc_device, dev_type;
 type m_pedo_misc_device, dev_type;
-type m_situ_misc_device, dev_type;
+type m_ges_misc_device, dev_type;
 type m_step_c_misc_device, dev_type;
+type m_tilt_misc_device, dev_type;
 type m_fusion_misc_device, dev_type;
+type m_bio_misc_device, dev_type;

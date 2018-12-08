@@ -5,4 +5,4 @@
 # Date : WK16.34
 # Operation : Migration
 # Purpose : Play tone for alert
-allow mediacodec cmas_file:dir search;
+allow mediacodec custom_file:dir search;

@@ -104,6 +104,3 @@ allow statusd devpts:chr_file { read write };
 allow statusd device:lnk_file unlink;
 allow statusd devpts:chr_file open;
 allow statusd devpts:chr_file ioctl;
-
-#For Vzw Phone CCP - Set IPV6 RS
-allow viarild proc_net:file write;

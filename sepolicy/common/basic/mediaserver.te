@@ -6,6 +6,7 @@
 # Operation : Migration
 # Purpose : camera devices access.
 allow mediaserver camera_isp_device:chr_file rw_file_perms;
+allow mediaserver ccu_device:chr_file rw_file_perms;
 allow mediaserver kd_camera_hw_device:chr_file rw_file_perms;
 allow mediaserver self:capability { setuid ipc_lock sys_nice };
 allow mediaserver sysfs_wake_lock:file rw_file_perms;
@@ -300,7 +301,8 @@ allow mediaserver camera_tsf_device:chr_file rw_file_perms;
 domain_auto_trans(mediaserver, thermal_manager_exec, thermal_manager)
 allow mediaserver thermal_manager_exec:file { read getattr open execute};
 
+# Date : WK16.35
+# Operation : Migration
+# Purpose : Update camera flashlight driver device file
+allow mediaserver flashlight_device:chr_file rw_file_perms;
 
-# Date : WK16.33
-# Purpose: Allow to access ged for gralloc_extra functions
-allow mediaserver proc_ged:file {open read write ioctl getattr};

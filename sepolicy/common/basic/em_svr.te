@@ -91,10 +91,8 @@ allow em_svr proc_battery_cmd:dir search;
 allow em_svr proc_battery_cmd:file { read getattr open write };
 ')
 
-# Date : WK16.33
-# Purpose: Allow to access ged for gralloc_extra functions
-allow em_svr proc_ged:file {open read write ioctl getattr};
-
 # Date : WK16.43
 # Purpose: for log setting
-allow em_svr toolbox_exec:file { execute getattr read open execute_no_trans };
+allow em_svr toolbox_exec:file { execute getattr read open execute_no_trans};
+allow em_svr init:unix_stream_socket connectto;
+allow em_svr property_socket:sock_file write;

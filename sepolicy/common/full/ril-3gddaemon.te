@@ -48,6 +48,3 @@ allow ril-3gddaemon device:dir { read open write};
 wakelock_use(ril-3gddaemon)
 
 allow ril-3gddaemon self:socket create_socket_perms;
-
-#system/bin/toybox for tedongle(ril-3gddaemon) script
-allow ril-3gddaemon toolbox_exec:file rx_file_perms;

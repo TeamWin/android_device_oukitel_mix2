@@ -74,11 +74,7 @@ allow kernel block_device:dir search;
 # Date : WK16.30
 # Operation: SQC
 # Purpose: Allow sdcardfs workqueue to access lower file systems
-allow kernel {vfat fuseblk mnt_media_rw_file}:dir create_dir_perms;
-allow kernel {vfat fuseblk mnt_media_rw_file}:file create_file_perms;
+allow kernel {vfat mnt_media_rw_file}:dir create_dir_perms;
+allow kernel {vfat mnt_media_rw_file}:file create_file_perms;
 allow kernel kernel:key { write search setattr };
 
-# Date : WK16.46
-# Operation: SQC
-# Purpose: Allow task of cpuset cgroup can migration to parent cgroup when cpus is NULL
-allow kernel untrusted_app:process setsched;

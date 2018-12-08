@@ -16,6 +16,7 @@ TestAmPolicyMakerService    u:object_r:mtk_test_ampolicymaker_service:s0
 CrossMountManagerService    u:object_r:mtk_crossmount_service:s0
 hotknot_service             u:object_r:mtk_hotknot_service:s0
 hotknotnativeservice        u:object_r:hotknot_native_service:s0
+PermControlService          u:object_r:mtk_permcontrol_service:s0
 consumer_ir_extra 	    u:object_r:mtk_consumerir_service:s0
 PPLAgent                    u:object_r:ppl_agent_service:s0
 program_binary              u:object_r:program_binary_service:s0
@@ -29,3 +30,6 @@ isubtedongle                u:object_r:radio_service:s0
 simphonebooktedongle        u:object_r:radio_service:s0
 ismstedongle                u:object_r:radio_service:s0
 tedongleservice             u:object_r:radio_service:s0
+
+CapSensorObserver           u:object_r:CapSensorObserver_service:s0
+

@@ -62,7 +62,3 @@ allow program_binary system_file:file execute_no_trans;
 # Operation : Migration
 # Purpose : Add permission for gpu access
 allow program_binary dri_device:chr_file { read write open ioctl };
-
-# Date : WK16.33
-# Purpose: Allow to access ged for gralloc_extra functions
-allow program_binary proc_ged:file {open read write ioctl getattr};

@@ -33,13 +33,3 @@ allow untrusted_app {fuse sdcardfs}:dir create_dir_perms;
 allow untrusted_app {fuse sdcardfs}:file create_file_perms;
 allow untrusted_app vfat:dir  {reparent rename rmdir setattr rw_dir_perms};
 allow untrusted_app vfat:file {rename setattr rw_file_perms};
-
-# Date : WK16.35
-# Operation : untrusted_app support direct-coredump abort message
-# Purpose :
-# avc: denied { write } for name="aee_interim" dev="dm-0" ino=8236
-# scontext=u:r:untrusted_app:s0:c512,c768 tcontext=u:object_r:coredump_file:s0
-# tclass=dir permissive=0
-userdebug_or_eng(`
-  allow untrusted_app coredump_file:dir { write };
-')

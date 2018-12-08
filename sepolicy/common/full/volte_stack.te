@@ -57,6 +57,3 @@ allow volte_stack property_socket:sock_file write;
 allow volte_stack self:netlink_xfrm_socket { write bind create read nlmsg_write nlmsg_read};
 allow volte_stack system_prop:property_service set;
 
-
-#for timer
-allow volte_stack self:capability2 wake_alarm;

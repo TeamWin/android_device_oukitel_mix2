@@ -28,7 +28,6 @@ allow volte_imcb fwmarkd_socket:sock_file write;
 allow volte_imcb self:tcp_socket { read getattr };
 allow volte_imcb netd:unix_stream_socket connectto;
 allow volte_imcb self:tcp_socket write;
-allow volte_imcb self:capability { setuid setgid };
 
 # Date : 2015/8/5
 # Operation : M Migration 
@@ -45,5 +44,3 @@ allow ccci_mdinit volte_prop:property_service set;
 allow volte_imcb sysfs_ccci:dir search;
 allow volte_imcb sysfs_ccci:file r_file_perms;
 
-#for timer
-allow volte_imcb self:capability2 wake_alarm;

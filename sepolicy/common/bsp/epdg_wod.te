@@ -50,8 +50,8 @@ allow epdg_wod vpn_data_file:file { read getattr open unlink };
 
 # Purpose :  create strongswan config file for IKEv2 Tunnel
 allow epdg_wod wod_apn_conf_file:dir { write read open add_name remove_name search };
-allow epdg_wod wod_apn_conf_file:file { write read create unlink open getattr };
-allow epdg_wod wod_ipsec_conf_file:file { write read create unlink open getattr };
+allow epdg_wod wod_apn_conf_file:file { write create unlink open getattr };
+allow epdg_wod wod_ipsec_conf_file:file { write create unlink open getattr };
 allow epdg_wod wod_ipsec_conf_file:dir { write read open add_name remove_name search };
 
 # tear_xfrm_policy
