@@ -1,0 +1,8 @@
+ro.product.brand=OUKITEL
+ro.product.name=MIX_2
+ro.product.device=MIX_2
+ro.build.product=MIX_2
+#ro.treble.enabled=flase
+#sys.usb.controller=a800000.dwc3
+#sys.usb.rndis.func.name=rndis_bam
+#sys.usb.rmnet.func.name=rmnet_bam
